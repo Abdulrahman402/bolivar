@@ -3,8 +3,6 @@ const cors = require("cors");
 const helmet = require("helmet");
 const compression = require("compression");
 
-const app = express();
-
 const user = require("../Routes/user");
 const clas = require("../Routes/class");
 const menu = require("../Routes/menu");
@@ -16,7 +14,7 @@ const mealImage = require("../Controllers/Menu/addImage");
 const classImage = require("../Controllers/Class/addImage");
 const offerImage = require("../Controllers/Offer/addImage");
 
-module.exports = function() {
+module.exports = function(app) {
   app.use(express.json());
   app.use(cors());
   app.use(helmet());

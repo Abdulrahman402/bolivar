@@ -4,8 +4,8 @@ const winston = require("winston");
 
 const app = express();
 
-require("./startup/db")();
 require("./startup/routes")(app);
+require("./startup/db")();
 
 app.get("/", async (req, res) => {
   res.send("Hello");
