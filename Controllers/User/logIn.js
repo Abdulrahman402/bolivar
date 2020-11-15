@@ -31,7 +31,7 @@ exports.logIn = async function(req, res, next) {
 
   const token = await user.generateAuthToken();
 
-  res.status(200).json({ statusCode: 200, token: token, user_data: user });
+  res.status(200).json({ statusCode: 200, user: user, token: token });
 };
 
 function validate(req) {
