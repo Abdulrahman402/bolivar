@@ -11,7 +11,7 @@ exports.addClient = async function(req, res, next) {
       .json({ statusCode: 400, message: error.details[0].message });
 
   let client = await Client.findOne({ phone: req.body.phone });
-  if (client) return res.status(400).send("client already registered");
+  if (client) return res.status(400).send("انت مسجل عندنا");
 
   client = new Client(_.pick(req.body, ["name", "phone"]));
 
