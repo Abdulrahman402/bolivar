@@ -5,14 +5,11 @@ const joi = require("joi");
 const { User } = require("../../Models/User");
 
 exports.addAdmin = async function(req, res, next) {
-  if (!req.body.username.trim() || !req.body.password.trim()) {
-    res
-      .statusCode(402)
-      .json({
-        statusCode: 402,
-        message: "اسم المستخدم وكلمة المرور حقول إجبارية"
-      });
-  }
+  if (!req.body.username.trim() || !req.body.password.trim())
+    return res.status(402).json({
+      statusCode: 402,
+      message: "اسم المستخدم و كلمة المرور حقول اجبارية"
+    });
 
   const { error } = validateAdmin(req.body);
   if (error)
