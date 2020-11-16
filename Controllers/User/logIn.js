@@ -31,7 +31,11 @@ exports.logIn = async function(req, res, next) {
 
   const token = await user.generateAuthToken();
 
-  res.status(200).json({ statusCode: 200, user: user, token: token });
+  const result = { user: user, token: token };
+
+  res
+    .status(200)
+    .json({ statusCode: 200, message: "تم سجيل الدخول بنجاح", result: result });
 };
 
 function validate(req) {
