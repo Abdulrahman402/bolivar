@@ -19,6 +19,6 @@ router.delete("/removeAll", auth, isAdmin, removeAll.removeAll);
 
 router.put("/updateOffer/:offerId", auth, isAdmin, updateOffer.updateOffer);
 
-router.get("/displayOffer", auth, displayOffer.DisplayOffer);
+router.get("/displayOffer/:offerId", auth, displayOffer.DisplayOffer);
 
 module.exports = router;
