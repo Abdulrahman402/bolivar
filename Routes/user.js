@@ -12,6 +12,7 @@ const allCashiers = require("../Controllers/User/allCashiers");
 const myProfile = require("../Controllers/User/myProfile");
 const changeCashierInfo = require("../Controllers/User/changeCashierInfo");
 const changeInfo = require("../Controllers/User/changeInfo");
+const allUsers = require("../Controllers/User/allUsers");
 
 router.post("/addAdmin", addAdmin.addAdmin);
 
@@ -31,5 +32,7 @@ router.put(
 );
 
 router.put("/changeInfo", auth, changeInfo.changeInfo);
+
+router.get("/allUsers", auth, isAdmin, allUsers.allUsers);
 
 module.exports = router;
