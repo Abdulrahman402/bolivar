@@ -13,7 +13,7 @@ const myProfile = require("../Controllers/User/myProfile");
 const changeCashierInfo = require("../Controllers/User/changeCashierInfo");
 const changeInfo = require("../Controllers/User/changeInfo");
 
-router.post("/addAdmin", auth, isAdmin, addAdmin.addAdmin);
+router.post("/addAdmin", addAdmin.addAdmin);
 
 router.post("/logIn", logIn.logIn);
 

@@ -10,6 +10,7 @@ const showClass = require("../Controllers/Class/showClass");
 const updateName = require("../Controllers/Class/updateName");
 const removeClass = require("../Controllers/Class/removeClass");
 const displayClasses = require("../Controllers/Class/displayClasses");
+const classSearch = require("../Controllers/Class/classSearch");
 
 router.post("/addClass", auth, isAdmin, addClass.addClass);
 
@@ -18,6 +19,8 @@ router.put("/updateName/:classId", auth, isAdmin, updateName.updateName);
 router.get("/showClass/:englishName", auth, showClass.showClass);
 
 router.get("/displayClasses", auth, displayClasses.displayClasses);
+
+router.get("/classSearch", classSearch.classSearch);
 
 router.delete("/removeClass/:classId", auth, isAdmin, removeClass.removeClass);
 
