@@ -26,7 +26,7 @@ router.get("/allCashiers", auth, isAdmin, allCashiers.allCashiers);
 router.get("/myProfile", auth, myProfile.myProfile);
 
 router.put(
-  "/changeCashierInfo",
+  "/changeCashierInfo/:userId",
   auth,
   isAdmin,
   changeCashierInfo.changeCashierInfo
