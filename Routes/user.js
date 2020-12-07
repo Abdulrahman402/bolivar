@@ -36,6 +36,6 @@ router.put("/changeInfo", auth, changeInfo.changeInfo);
 
 router.get("/allUsers", auth, isAdmin, allUsers.allUsers);
 
-router.delete("/deleteUser", auth, isAdmin, deleteUser.deleteUser);
+router.delete("/deleteUser/:userId", auth, isAdmin, deleteUser.deleteUser);
 
 module.exports = router;
