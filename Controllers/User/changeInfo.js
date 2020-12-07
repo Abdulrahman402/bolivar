@@ -3,17 +3,17 @@ const joi = require("joi");
 const { User } = require("../../Models/User");
 
 exports.changeInfo = async function(req, res, next) {
-  const { error } = changeInfo(req.body);
-  if (error)
-    return res
-      .status(400)
-      .json({ statusCode: 400, message: error.details[0].message });
-
   if (!req.body.username.trim() || !req.body.password.trim())
     return res.status(402).json({
       statusCode: 402,
       message: "اسم المستخدم و كلمة المرور حقول اجبارية"
     });
+
+  const { error } = changeInfo(req.body);
+  if (error)
+    return res
+      .status(400)
+      .json({ statusCode: 400, message: error.details[0].message });
 
   const user = await User.findOne({ username: req.body.username }).select(
     "username"
@@ -41,6 +41,7 @@ exports.changeInfo = async function(req, res, next) {
 
 function changeInfo(user) {
   const schema = joi.object({
+    username: joi.string().required(),
     firstName: joi.string().required(),
     lastName: joi.string().required(),
     role: joi.string().required(),
