@@ -40,7 +40,7 @@ router.put(
   async (req, res) => {
     const clas = await Class.findOneAndUpdate(
       { _id: req.params.classId },
-      { $set: { image: req.file.path } },
+      { $set: { image: `localhost:1000/${req.file.path}` } },
       { new: true }
     );
 

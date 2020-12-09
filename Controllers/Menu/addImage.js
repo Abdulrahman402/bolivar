@@ -38,7 +38,7 @@ router.put(
   async (req, res) => {
     const meal = await Menu.findOneAndUpdate(
       { _id: req.params.mealId },
-      { $set: { image: req.file.path } },
+      { $set: { image: `localhost:1000/${req.file.path}` } },
       { new: true }
     );
 

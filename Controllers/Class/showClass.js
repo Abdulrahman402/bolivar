@@ -1,7 +1,7 @@
 const { Class } = require("../../Models/Class");
 
 exports.showClass = async function(req, res, next) {
-  const clas = await Class.find({ englishName: req.params.englishName })
+  const clas = await Class.findOne({ englishName: req.params.englishName })
     .select()
     .populate("meals");
 

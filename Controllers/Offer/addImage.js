@@ -38,7 +38,7 @@ router.put(
   async (req, res) => {
     const offer = await Offer.findOneAndUpdate(
       { _id: req.params.offerId },
-      { $set: { image: req.file.path } },
+      { $set: { image: `localhost:1000/${req.file.path}` } },
       { new: true }
     );
 
