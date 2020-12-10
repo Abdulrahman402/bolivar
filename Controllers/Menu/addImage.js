@@ -10,7 +10,7 @@ const imageStorage = multer.diskStorage({
     cb(null, "Menu_Image");
   },
   filename: function(req, file, cb) {
-    cb(null, file.originalname);
+    cb(null, Date.now().toISOString() + file.originalname);
   }
 });
 
@@ -38,7 +38,7 @@ router.put(
   async (req, res) => {
     const meal = await Menu.findOneAndUpdate(
       { _id: req.params.mealId },
-      { $set: { image: `localhost:1000/${req.file.path}` } },
+      { $set: { image: `https://bolivar1.herokuapp.com/${req.file.path}` } },
       { new: true }
     );
 
