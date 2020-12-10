@@ -22,7 +22,7 @@ const uploadPic = multer(
     },
     fileFilter(req, file, cb) {
       if (!file.originalname.match(/\.(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
-        return cb(new Error("من فضلك قم بأدخال صورة"));
+        return cb({ statusCode: 400, message: "من فضلك قم بأدخال صورة" });
       }
       cb(undefined, true);
     }
