@@ -1,4 +1,6 @@
-const socket = require("socket.io-client")("lamera-socket.herokuapp.com");
+const socket = require("socket.io-client")(
+  "https://lamera-socket.herokuapp.com"
+);
 
 const { Table } = require("../../Models/Table");
 
