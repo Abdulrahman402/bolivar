@@ -1,4 +1,4 @@
-const _ = require("lodash");
+const socket = require("socket.io-client")("Lamera-Socket.herokuapp.com");
 
 const { Table } = require("../../Models/Table");
 
@@ -9,9 +9,7 @@ exports.tableLogin = async function(req, res, next) {
     { new: true }
   );
 
-  const token = await table.generateAuthToken();
+  socket.emit("tableOnline", table);
 
-  res
-    .status(200)
-    .json({ statusCode: 200, token: token, message: "اهلا بكم في بوليفار" });
+  res.status(200).json({ statusCode: 200, message: "اهلا بكم في لاميرا" });
 };
