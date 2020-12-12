@@ -38,6 +38,7 @@
     "node-modules": "^1.0.1",
     "nodemon": "^2.0.4",
     "qrcode": "^1.4.4",
+    "socket.io": "^3.0.4",
     "socket.io-client": "^3.0.4",
     "winston": "^3.3.3"
   },
