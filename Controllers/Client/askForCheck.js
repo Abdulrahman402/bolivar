@@ -1,4 +1,6 @@
-var socket = require("socket.io-client")("http://localhost:2000");
+var socket = require("socket.io-client")(
+  "https://lamera-socket.herokuapp.com/"
+);
 
 const { Table } = require("../../Models/Table");
 
