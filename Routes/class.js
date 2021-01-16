@@ -20,7 +20,7 @@ router.get("/showClass/:englishName", auth, showClass.showClass);
 
 router.get("/displayClasses", auth, displayClasses.displayClasses);
 
-router.get("/classSearch", classSearch.classSearch);
+router.get("/classSearch", auth, classSearch.classSearch);
 
 router.delete("/removeClass/:classId", auth, isAdmin, removeClass.removeClass);
 

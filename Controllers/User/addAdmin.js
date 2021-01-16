@@ -30,7 +30,9 @@ exports.addAdmin = async function(req, res, next) {
 
   await user.save();
 
-  res.status(200).json({ statusCode: 200, result: user });
+  const token = await user.generateAuthToken();
+
+  res.status(200).json({ statusCode: 200, result: user, token: token });
 };
 
 function validateAdmin(admin) {

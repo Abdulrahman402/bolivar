@@ -1,5 +1,3 @@
-var socket = require("socket.io-client")("http://localhost:2000");
-
 const { Table } = require("../../Models/Table");
 
 exports.tableLogin = async function(req, res, next) {

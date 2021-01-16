@@ -15,7 +15,7 @@ const changeInfo = require("../Controllers/User/changeInfo");
 const allUsers = require("../Controllers/User/allUsers");
 const deleteUser = require("../Controllers/User/deleteUser");
 
-router.post("/addAdmin", addAdmin.addAdmin);
+router.post("/addAdmin", auth, isAdmin, addAdmin.addAdmin);
 
 router.post("/logIn", logIn.logIn);
 
